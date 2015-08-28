@@ -6,7 +6,7 @@
 </description>
 <property environment="env"/> 
 <property name="base.dir" value="."/>   
-<property name="src.dir" value="src"/>
+<property name="src.dir" value="."/>
 <property name="target.dir" value="target"/>
 <property name="build.dir" value="build"/>
 <property name="dest.file" value="fortravis.war"/>
