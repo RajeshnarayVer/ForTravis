@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ForTravis" default="deploy">
+<description>
+      This script compiles/runs Web project
+</description>
+<property environment="env"/> 
+<property name="base.dir" value="."/>   
+<property name="src.dir" value="src"/>
+<property name="target.dir" value="target"/>
+<property name="build.dir" value="build"/>
+<property name="dest.file" value="fortravis.war"/>
+
+
+<property name="projectName" value="ForTravis"/>
+
+<target name="clean">
+   <delete file="${base.dir}/${dist.dir}/${dest.file}" />
+   <delete dir="${base.dir}/${tmp}" />
+</target>
+
+<target name="build" >
+<echo message="Executing target war"/>
+      <mkdir dir="${base.dir}/${tmp}/${target.dir}" />
+      <mkdir dir="${base.dir}/${tmp}/${target.dir}/classes" />
+      <mkdir dir="${base.dir}/${dist.dir}" />
+      <!-- compile the ejb module --> 
+      <javac srcdir="${base.dir}/${src.dir}" destdir="${base.dir}/${tmp}/${target.dir}/classes"  failonerror="true">
+        <classpath>
+        <path refid="project.classpath"/>
+        </classpath>
+      </javac>
+</target>
+
